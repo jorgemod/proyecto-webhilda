@@ -26,7 +26,7 @@
                  <?php
                 
                 include("conexion.php");
-                $sql = "SELECT * FROM ropapro where genero = 'm'";
+               /* $sql = "SELECT * FROM ropapro where genero = 'm'";
                 $result = mysqli_query($db, $sql);
                     
                 while ($mostrar = mysqli_fetch_array($result)){
@@ -42,6 +42,7 @@
                         echo '</p>';
                     echo '</div>';
                     }
+                    */
                 ?>   
            
             
