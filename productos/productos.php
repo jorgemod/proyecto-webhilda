@@ -11,15 +11,15 @@
         <div id="mySidebar" class="sidebar">    
             <ul>
                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-                <li> <a href="nami.html">HOME</a></li>  
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Clients</a></li>
-                <li><a href="#">Contact</a></li>
+                
+                <li><a href="#">Mi Cuenta</a></li>
+                <li><a href="#">Pagos</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </div>
         <div id="main" style="padding:1px 16px;height:1000px;">
             <button class="openbtn" onclick="openNav()">
-                ☰ MENU
+                ☰ Menú
             </button>      
             <h1>Productos disponibles</h1>
            

@@ -1,10 +1,11 @@
 body {
-    font-family: "muli", cursive, sans-serif;
+    font-family: poppins, sans-serif;
+    background-color: #F26398;
 }
 
 h1 {
     text-align: center;
-    font-family: "Homer Simpson", cursive, sans-serif;
+    font-family: poppins, sans-serif;
     font-size: 4em;
     font-weight: bold;
     color: #fff;
@@ -18,16 +19,16 @@ h1 {
     margin-top: 20pt;
     width: 150pt;
     height: 170pt;
-    background-color: paleturquoise;
+    background-color: #3F4FA5;
 }
 
 .sidebar {
     position: fixed;
     width: 0%;
     height: 100%;
-    background: rgb(172, 202, 240);
+    background-color: #3F4FA5;
     font-size: 1.1em;
-    font-family: "Homer Simpson", cursive, sans-serif;
+    font-family: poppins, sans-serif;
     z-index: 1;
     top: 0%;
     left: 0%;
@@ -46,25 +47,26 @@ h1 {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-    color: white;
+    background: rgba(242, 99, 151, 0.007);
 }
 
 .openbtn {
     font-size: 20px;
     cursor: pointer;
-    background-color: rgb(172, 202, 240);
+    background-color: #3F4FA5;
     color: white;
     padding: 10px 15px;
     border: none;
 }
 
 .openbtn:hover {
-    background-color: rgb(180, 231, 240);
+    background-color: #3F4FA5;
 }
 
 #main {
     transition: margin-left .5s;
     padding: 16px;
+    background-color: #F26398;
 }
 
 ul {
