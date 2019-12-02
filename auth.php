@@ -9,10 +9,10 @@ if (isset($users[0])) {
     // password_verify($_POST['password'], $users[0]['password'])
     if ($_POST['password'] == $users[0]['password']) {
         $_SESSION['id'] = $users[0]['id_cliente'];
-        header("location: productos.php");
+        header("location: productos/productos.php");
     } else {
-        header("location: login.html");
+        header("location: trylogin.html");
     }
 } else {
-    header("location: login.html");
+    header("location: trylogin.html");
 }
