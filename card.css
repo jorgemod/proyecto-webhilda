@@ -95,10 +95,20 @@ input {
 }
 
 .button {
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.979);
     margin: 0 auto;
     padding-bottom: 10px;
     padding-top: 5px;
+}
+
+#registro {
+    border: 1px solid rgba(255, 255, 255, 0.979);
+    margin: 0 auto;
+    padding-bottom: 12px;
+    padding-top: 7px;
+    background: transparent;
+    font-family: poppins, sans-serif;
+    color: white;
 }
 
 ::placeholder {
