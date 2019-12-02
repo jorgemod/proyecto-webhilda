@@ -6,8 +6,8 @@ $contraseña = $_POST['contraseña'];
 $sql = "INSERT INTO cliente(nombre_cliente,telefono_cliente,password)VALUES('$nombre','$telefono','$contraseña')";
 if(mysqli_query($db,$sql))
 {
-    echo "agregado con exito";
-    include("addcliente.php");
+    
+    include("dash.html");
 }
 else {
     echo "error al agregar";
