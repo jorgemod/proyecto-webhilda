@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['id'])) {
-    header("location: login.html");
+    header("location: ../login.html");
 }
 ?>
 <!DOCTYPE html>
@@ -21,6 +21,7 @@ if (!isset($_SESSION['id'])) {
                 <li><a href="#">Mi Cuenta</a></li>
                 <li><a href="#">Pagos</a></li>
                 <li><a href="#">Contacto</a></li>
+                <li><a href="../logout.php">Cerrar sesión</a></li>
             </ul>
         </div>
         <div id="main" style="padding:1px 16px;height:1000px;">
