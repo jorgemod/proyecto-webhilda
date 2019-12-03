@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 29-11-2019 a las 07:08:11
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Host: 127.0.0.1
+-- Generation Time: Dec 03, 2019 at 08:21 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sistema_web`
+-- Database: `sistema_web`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cliente`
+-- Table structure for table `cliente`
 --
 
 CREATE TABLE `cliente` (
@@ -35,10 +35,19 @@ CREATE TABLE `cliente` (
   `password` varchar(255) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Dumping data for table `cliente`
+--
+
+INSERT INTO `cliente` (`id_cliente`, `nombre_cliente`, `telefono_cliente`, `password`) VALUES
+(1, 'admin', 123456789, 'admin'),
+(2, 'kal-el', 2147483647, '1234'),
+(4, 'ivan', 1234567890, '1234');
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pagos`
+-- Table structure for table `pagos`
 --
 
 CREATE TABLE `pagos` (
@@ -51,21 +60,34 @@ CREATE TABLE `pagos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pedidos`
+-- Table structure for table `pedidos`
 --
 
 CREATE TABLE `pedidos` (
   `id_pedido` int(11) NOT NULL,
   `fecha_pedido` date NOT NULL,
-  `monto_total` double NOT NULL,
-  `estado_pedido` enum('activo','inactivo','cancelado') COLLATE utf8_bin NOT NULL,
+  `precio_unitario` double NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `monto_total` double AS (precio_unitario * cantidad) VIRTUAL,
+  `estado_pedido` enum('activo','inactivo','cancelado') COLLATE utf8_bin NOT NULL DEFAULT 'activo',
   `id_cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `pedidos`
+--
+
+INSERT INTO `pedidos` (`id_pedido`, `fecha_pedido`, `precio_unitario`, `cantidad`, `estado_pedido`, `id_cliente`) VALUES
+(1, '2019-12-03', 0, 0, 'activo', 2),
+(2, '2019-12-03', 110.5, 2, 'activo', 4),
+(4, '2019-12-03', 50, 2, 'activo', 1),
+(5, '2019-12-03', 50, 6, 'activo', 4),
+(6, '2019-12-03', 100, 3, 'activo', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pedidos_productos`
+-- Table structure for table `pedidos_productos`
 --
 
 CREATE TABLE `pedidos_productos` (
@@ -73,10 +95,17 @@ CREATE TABLE `pedidos_productos` (
   `id_producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Dumping data for table `pedidos_productos`
+--
+
+INSERT INTO `pedidos_productos` (`id_pedido`, `id_producto`) VALUES
+(1, 1);
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `productos`
+-- Table structure for table `productos`
 --
 
 CREATE TABLE `productos` (
@@ -88,88 +117,98 @@ CREATE TABLE `productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Índices para tablas volcadas
+-- Dumping data for table `productos`
+--
+
+INSERT INTO `productos` (`id_producto`, `marca`, `precio`, `foto_url`, `descripcion`) VALUES
+(1, 'Betterware', 100, 'https://http2.mlstatic.com/uncaged-ergonomics-workez-mejor-portatil-D_NQ_NP_624381-MLM30637572129_052019-F.jpg', 'soporte para laptop'),
+(2, 'Avon', 110, '', 'tarja para platos'),
+(3, 'avon', 50, '', ''),
+(10400, 'Avon', 999, '', 'mesa de jardín');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `cliente`
+-- Indexes for table `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
--- Indices de la tabla `pagos`
+-- Indexes for table `pagos`
 --
 ALTER TABLE `pagos`
   ADD PRIMARY KEY (`id_pago`),
   ADD KEY `fkk_id_pedido` (`id_pedido`);
 
 --
--- Indices de la tabla `pedidos`
+-- Indexes for table `pedidos`
 --
 ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`id_pedido`),
   ADD KEY `fk_id_cliente` (`id_cliente`);
 
 --
--- Indices de la tabla `pedidos_productos`
+-- Indexes for table `pedidos_productos`
 --
 ALTER TABLE `pedidos_productos`
   ADD PRIMARY KEY (`id_pedido`,`id_producto`),
   ADD KEY `fk_id_producto` (`id_producto`);
 
 --
--- Indices de la tabla `productos`
+-- Indexes for table `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id_producto`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `cliente`
+-- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `pagos`
+-- AUTO_INCREMENT for table `pagos`
 --
 ALTER TABLE `pagos`
   MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `pedidos`
+-- AUTO_INCREMENT for table `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de la tabla `productos`
+-- AUTO_INCREMENT for table `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10401;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `pagos`
+-- Constraints for table `pagos`
 --
 ALTER TABLE `pagos`
   ADD CONSTRAINT `fkk_id_pedido` FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`);
 
 --
--- Filtros para la tabla `pedidos`
+-- Constraints for table `pedidos`
 --
 ALTER TABLE `pedidos`
   ADD CONSTRAINT `fk_id_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`);
 
 --
--- Filtros para la tabla `pedidos_productos`
+-- Constraints for table `pedidos_productos`
 --
 ALTER TABLE `pedidos_productos`
   ADD CONSTRAINT `fk_id_pedido` FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`),
