@@ -40,10 +40,13 @@ if (!isset($_SESSION['id'])) {
                         echo $mostrar['foto_url'];
                         echo '"height="200px" width="200">';
                         echo '<p>';
-                            echo $mostrar['descripcion'];
+                            echo 'Producto'.':'.$mostrar['descripcion'];
                         echo '</p>';
                         echo '<p>';
-                            echo $mostrar['precio'];
+                            echo 'Id'.':'.$mostrar['id_producto'];
+                        echo '</p>';
+                        echo '<p>';
+                            echo 'Precio'.':'.$mostrar['precio'];
                         echo '</p>';
                     echo '</div>';
                     }
