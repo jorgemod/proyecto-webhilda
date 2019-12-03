@@ -33,23 +33,22 @@ if (!isset($_SESSION['id'])) {
                  <?php
                 
                 include("conexion.php");
-               /* $sql = "SELECT * FROM ropapro where genero = 'm'";
+                $sql = "SELECT * FROM productos,pedidos where estado_pedido = 'cancelado'";
                 $result = mysqli_query($db, $sql);
-                    
-                while ($mostrar = mysqli_fetch_array($result)){
+                while ($mostrar = mysqli_fetch_array($result) ){
                     echo '<div id="card">';
                         echo '<img src="';
-                        echo $mostrar['foto'];
+                        echo $mostrar['foto_url'];
                         echo '"height="200px" width="200">';
                         echo '<p>';
-                            echo $mostrar['descripion'];
+                            echo $mostrar['descripcion'];
                         echo '</p>';
                         echo '<p>';
                             echo $mostrar['precio'];
                         echo '</p>';
                     echo '</div>';
                     }
-                    */
+                    
                 ?>   
            
             
