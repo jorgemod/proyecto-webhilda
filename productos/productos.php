@@ -5,7 +5,7 @@ if (!isset($_SESSION['id'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <title>Principal</title>
         <link rel="stylesheet" type="text/css" href="producstyle.css">
