@@ -18,8 +18,7 @@ if (!isset($_SESSION['id'])) {
             <ul>
                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
                 
-                <li><a href="#">Mi Cuenta</a></li>
-                <li><a href="#">Pagos</a></li>
+                <li><a href="../cliente/cuenta.html">Mi Cuenta</a></li>
                 <li><a href="#">Contacto</a></li>
                 <li><a href="../logout.php">Cerrar sesión</a></li>
             </ul>
