@@ -8,6 +8,7 @@ $foto_url = $_POST['foto'];
 
 $id_producto = $_POST['idProducto'];
 $marca = $_POST['marca'];
+$descripcion = $_POST['productoDescripcion']
 
 //echo $fecha_actual . " - " . $precio_unitario . " - " . $cantidad . " - " . $id_cliente . " - " . $id_producto . " - " . $marca;
 
@@ -20,7 +21,7 @@ else {
     echo "error al agregar pedido";
 }
 
-$sql = "INSERT INTO productos (id_producto, marca, precio, foto_url) VALUES ('$id_producto','$marca','$precio_unitario', '$foto_url')";
+$sql = "INSERT INTO productos (id_producto, marca, precio, foto_url, descripcion) VALUES ('$id_producto','$marca','$precio_unitario', '$foto_url', '$descripcion')";
 if(mysqli_query($db, $sql))
 {    
     //include("dash.html");
