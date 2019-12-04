@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = '';
+$password = '1234';
 $db = "sistema_web";
 
 try {
