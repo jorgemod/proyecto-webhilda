@@ -17,9 +17,15 @@ h1 {
     position: relative;
     margin-left: 20pt;
     margin-top: 20pt;
-    width: 150pt;
-    height: 170pt;
+    width: 250pt;
+    height: 270pt;
+    border-radius: 20pt;
     background-color: #3F4FA5;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .sidebar {

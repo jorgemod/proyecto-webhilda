@@ -10,6 +10,9 @@ if (!isset($_SESSION['id'])) {
         <title>Principal</title>
         <link rel="stylesheet" type="text/css" href="producstyle.css">
         <script src="productos.js"></script>
+        <style>
+
+        </style>
     </head>
     
     <body>
@@ -18,7 +21,7 @@ if (!isset($_SESSION['id'])) {
             <ul>
                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
                 
-                <li><a href="../cliente/cuenta.html">Mi Cuenta</a></li>
+                <li><a href="../cliente/cuenta.php">Mi Cuenta</a></li>
                 <li><a href="#">Contacto</a></li>
                 <li><a href="../logout.php">Cerrar sesión</a></li>
             </ul>
@@ -40,13 +43,13 @@ if (!isset($_SESSION['id'])) {
                         echo $mostrar['foto_url'];
                         echo '"height="200px" width="200">';
                         echo '<p>';
-                            echo 'Producto'.':'.$mostrar['descripcion'];
+                            echo $mostrar['descripcion'];
                         echo '</p>';
                         echo '<p>';
                             echo 'Id'.':'.$mostrar['id_producto'];
                         echo '</p>';
                         echo '<p>';
-                            echo 'Precio'.':'.$mostrar['precio'];
+                            echo '$'.$mostrar['precio'];
                         echo '</p>';
                     echo '</div>';
                     }
