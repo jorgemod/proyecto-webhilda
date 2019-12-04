@@ -64,6 +64,8 @@
             <input type="text" name="precioUnitario" id="precioUnitario">
             <label for="cantidad">Cantidad:</label>
             <input type="text" name="cantidad" id="cantidad">
+            <label for="foto">Foto:</label>
+            <input type="text" name="foto" id="foto">
 
             <input class="button" type="submit">
         </form>
