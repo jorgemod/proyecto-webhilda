@@ -10,7 +10,6 @@ if (isset($users[0])) {
     if ($_POST['password'] == $users[0]['password']) {
         $_SESSION['id'] = $users[0]['id_cliente'];
         if ($users[0]['nombre_cliente'] == "admin") {
-            // TODO ¿A donde mando al administrador?
             header("location: admin/dash.html");
         } else {
             header("location: productos/productos.php");
