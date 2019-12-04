@@ -21,7 +21,7 @@ if (!isset($_SESSION['id'])) {
                 $sql = "SELECT * FROM pedidos as p inner join cliente as c on p.id_cliente = c.id_cliente where estado_pedido = 'activo'";
                 $result = mysqli_query($db, $sql);
                 echo '<table>';
-                echo '<tr>';
+                echo '<tr id="tcabeza">';
                 echo '<th>id pedido</th>';
                         echo '<th>cliente</th>';
                         echo '</tr>';
