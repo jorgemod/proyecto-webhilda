@@ -66,7 +66,7 @@
             <input type="text" name="cantidad" id="cantidad">
             <label for="foto">Foto:</label>
             <input type="text" name="foto" id="foto">
-            <label for="descripcion">Foto:</label>
+            <label for="descripcion">Descripcion</label>
             <input type="text" name="productoDescripcion" id="productoDescripcion">
 
             <input class="button" type="submit">
