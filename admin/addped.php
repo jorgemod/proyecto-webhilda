@@ -8,7 +8,7 @@ $foto_url = $_POST['foto'];
 
 $id_producto = $_POST['idProducto'];
 $marca = $_POST['marca'];
-$descripcion = $_POST['productoDescripcion']
+$descripcion = $_POST['productoDescripcion'];
 
 //echo $fecha_actual . " - " . $precio_unitario . " - " . $cantidad . " - " . $id_cliente . " - " . $id_producto . " - " . $marca;
 

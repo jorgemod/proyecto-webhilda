@@ -32,7 +32,7 @@ if (!isset($_SESSION['id'])) {
                  <?php
                 
                 include("conexion.php");
-                $sql = "SELECT * FROM productos,pedidos where estado_pedido = 'cancelado'";
+                $sql = "SELECT * FROM productos as p inner join pedidos_productos as pp on p.id_producto = pp.id_producto inner join pedidos as pe on pp.id_pedido=pe.id_pedido where estado_pedido ='cancelado'";
                 $result = mysqli_query($db, $sql);
                 while ($mostrar = mysqli_fetch_array($result) ){
                     echo '<div id="card">';
